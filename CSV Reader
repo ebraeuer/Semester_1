@@ -1,0 +1,21 @@
+import csv
+
+print("--- Start des Programms ---")
+
+try:
+    # Versuche die Datei zu öffnen. 
+    # Wenn deine CSV anders heißt, ändere 'test.csv' hier!
+    with open('First_Test_.csv', mode='r', encoding='utf-8') as file:
+        
+        # Reader erstellen (Achte auf das Trennzeichen: Komma oder Strichpunkt?)
+        reader = csv.reader(file, delimiter=',')
+        
+        for zeile in reader:
+            print(zeile)
+
+    print("--- Erfolg! Datei eingelesen ---")
+
+except FileNotFoundError:
+    print("Fehler: Ich finde die Datei 'test.csv' nicht. Prüfe den Namen!")
+except Exception as e:
+    print(f"Ein anderer Fehler ist passiert: {e}")

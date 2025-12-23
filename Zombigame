@@ -1,0 +1,40 @@
+width = 5 
+height = 5 
+
+line_border = "|---|"
+line_normal = "|   |"
+
+is_game_running = True
+
+field = ""
+
+while is_game_running:
+    for y in range(height): # Erzeugung aller schleifen 
+                            # Jedes y entspricht einer Zeile beginnt ei 0 Zeilen werden von oben nach unten generiert, damit Y-Achse is invertiert.
+        for x in range(width):
+            #Erzeugt jedes Element in den Zeilen
+            #x ist dabei der Index des Jeweiligen ELements beginnend bei links x=0
+            if y == 0 or y == height-1:
+                if x == 0 or x == width-1:
+                    field += "|"
+        
+                elif y == 0 or y == height-1:
+                    field+="-"
+
+                elif x == 0 or y == height-1:
+                    field+="-"
+
+                else:
+                    field += ""
+            
+
+
+            else:
+                field += ""
+        
+    print(field)
+            
+            
+    is_game_running = False     
+            
+            #print(f"{line_normal}")
